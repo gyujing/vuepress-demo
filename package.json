@@ -1,0 +1,23 @@
+{
+  "name": "vuepress-demo",
+  "version": "1.0.0",
+  "description": "vuepress学习",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gyujing/vuepress-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gyujing/vuepress-demo/issues"
+  },
+  "homepage": "https://github.com/gyujing/vuepress-demo#readme",
+  "devDependencies": {
+    "vuepress": "^1.9.9"
+  }
+}

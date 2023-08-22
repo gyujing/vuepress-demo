@@ -1,9 +1,10 @@
 {
-  "name": "vuepress-demo",
+  "name": "vuepress",
   "version": "1.0.0",
-  "description": "vuepress学习",
+  "description": "vuepress V1 学习",
   "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },
@@ -17,7 +18,12 @@
     "url": "https://github.com/gyujing/vuepress-demo/issues"
   },
   "homepage": "https://github.com/gyujing/vuepress-demo#readme",
+  "peerDependencies": {
+    "vue": "^2.6.10",
+    "element-ui": "^2.13.1"
+  },
   "devDependencies": {
-    "vuepress": "^1.9.9"
+    "element-ui": "^2.13.1",
+    "vuepress": "^1.9.10"
   }
 }

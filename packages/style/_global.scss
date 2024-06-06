@@ -1,0 +1,11 @@
+// common
+@import "comm/var";
+@import "comm/func";
+@import "mixins/index";
+
+// variable
+@import "variable/index";
+
+.gu-unvisibled{
+  display:none;
+}

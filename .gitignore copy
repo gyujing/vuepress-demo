@@ -1,0 +1,15 @@
+.DS_Store
+.vscode
+.idea
+*.log*
+.cache
+
+# npm
+node_modules
+package-lock.json
+
+# dist file
+dist
+esm
+lib
+tests/coverage

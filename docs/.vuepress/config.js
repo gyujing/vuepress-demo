@@ -1,20 +1,55 @@
+const sass = require("sass");
+const fiber = require('fibers');
+
 module.exports = {
-  title: 'Hello VuePress',
-  description: 'Just playing around',
-  chainWebpack(config) {
-    config.resolve.alias.set('core-js/library/fn', 'core-js/features');
-  },
-  // 为当前的主题提供一些配置
+  title: 'vuepress-demo',
+  description: 'Vue component library template.',
+  extraWatchFiles: [
+    '/package/**/*.*'
+  ],
   themeConfig: {
-    // 侧边栏
     sidebar: [
       {
-        title: '基础组件',
+        title: '组件库',
         children: [
-          "/radio/",
-          "/button/",
+          "/authHandler/",
         ]
-      }
+      },
     ]
-  }
+  },
+  scss: {
+    implementation: sass,
+    fiber,
+  },
+  configureWebpack: {
+    resolve: {
+      extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue'],
+    },
+    module: {
+      rules: [
+        {
+          test: /\.jsx?$/,
+          exclude: /node_modules/,
+          use: [
+            'babel-loader',
+          ],
+        },
+        {
+          test: /\.tsx?$/,
+          exclude: /node_modules/,
+          use: [
+            'babel-loader',
+            {
+              loader: 'ts-loader',
+              options: {
+                transpileOnly: true,
+                happyPackMode: true,
+                appendTsSuffixTo: ['\\.vue$'],
+              },
+            },
+          ],
+        },
+      ],
+    },
+  },
 }

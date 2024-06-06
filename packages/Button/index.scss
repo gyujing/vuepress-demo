@@ -1,0 +1,8 @@
+@import "../style/global";
+
+@include b(button) {
+  @include e(text-default) {
+    background: transparent;
+    border: none;
+  }
+}

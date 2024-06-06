@@ -1,0 +1,60 @@
+stages:
+  - install
+  - lint
+  - build
+  - todev
+
+.template: &template_all
+  except:
+    - /dev-*/
+    - merge_requests
+  tags:
+    - his-front-tags
+
+.template: &template_def
+  except:
+    - /dev-*/
+    - merge_requests
+    - master
+  tags:
+    - his-front-tags
+
+.template: &template_master
+  only:
+    - master
+  tags:
+    - his-front-tags
+
+cache:
+  paths:
+    - node_modules
+
+install:
+  <<: *template_all
+  stage: install
+  script: sudo npm install --registry=https://registry.npm.taobao.org
+  when: on_success
+
+lint:
+  <<: *template_all
+  stage: lint
+  script: npm run lint
+  when: on_success
+
+build:
+  <<: *template_all
+  stage: build
+  script: npm run build:docs
+  when: on_success
+
+todev:
+  <<: *template_def
+  stage: todev
+  script: /home/dev/lxy/git-shell/front/group.ssh ${CI_BUILD_REF} ${CI_PROJECT_NAME}
+  when: manual
+
+autodev:
+  <<: *template_master
+  stage: todev
+  script: /home/dev/lxy/git-shell/front/group.ssh ${CI_BUILD_REF} ${CI_PROJECT_NAME}
+  when: on_success

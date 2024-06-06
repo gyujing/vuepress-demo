@@ -1,0 +1,27 @@
+// 响应式断点
+$--step-res-breakpoint: 768px !default;
+
+$--step-padding-horizontal: 6px !default;
+$--step-padding-vertical: 6px !default;
+
+$--step-main-margin-horizontal: 8px !default;
+$--step-main-margin-vertical: 8px !default;
+
+// line
+$--step-line-color: #949AA1 !default;
+$--step-line-size: 1px !default;
+
+// head
+$--step-head-size: 22px !default;
+$--step-head-font-size: 12px !default;
+$--step-head-color: #fff !default;
+$--step-head-bg-color: #4E82FF !default;
+
+// title
+$--step-title-font-size: 14px !default;
+$--step-title-color: #646D77 !default;
+
+// desc
+$--step-desc-font-size: 12px !default;
+$--step-desc-line-height: 18px !default;
+$--step-desc-color: #646D77 !default;

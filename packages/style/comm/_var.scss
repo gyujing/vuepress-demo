@@ -1,0 +1,13 @@
+// font
+$--font-family: PingFangSC-Light, "PingFang SC", Helvetica, Tahoma, Arial, "Microsoft YaHei", "Hiragino Sans GB",
+  "WenQuanYi Micro Hei", sans-serif !default;
+
+// z-index
+$--index-normal: 1 !default;
+$--index-top: 1000 !default;
+$--index-popper: 2000 !default;
+
+// transition and animation
+$--transition-duration-base: 0.3s;
+$--transition-duration-fast: 0.2s;
+$--transition-timing-base: ease-in-out;
